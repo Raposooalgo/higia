@@ -21,6 +21,8 @@ import androidx.compose.ui.unit.sp
 import higia.shared.generated.resources.Res
 import higia.shared.generated.resources.qr_code_scanner
 import org.jetbrains.compose.resources.painterResource
+import androidx.compose.ui.draw.clip
+import com.example.higia.ui.components.CameraPreview
 
 // Colores de la pantalla (gris verdoso del mockup)
 private val FondoQr    = Color(0xFF6B7B6E)
@@ -74,11 +76,11 @@ fun QrScan() {
             Spacer(modifier = Modifier.height(32.dp))
 
             // Placeholder cámara
-            Box(
+            CameraPreview(
                 modifier = Modifier
                     .fillMaxWidth()
                     .aspectRatio(1f)
-                    .background(PlaceholderCam, RoundedCornerShape(16.dp))
+                    .clip(RoundedCornerShape(16.dp))
             )
         }
 
